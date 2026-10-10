@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Problem - Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .tab-content { display: none; }
+    .tab-active { display: block; }
+    .tab-btn { flex: 1; }
+  </style>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+    <section class="container mt-48 px-4 py-12">
+        <!-- Section Header with Navigation -->
+        <div class="flex justify-between items-center mb-8">
+          <!-- Section title -->
+          <div class="pl-12">
+            <h2 class="text-3xl font-bold text-gray-800">Practical Courses For Work & Growth
+            </h2>
+            <p class="text-gray-600 mt-2">No fluff. Just hands-on learning across in-demand skills
+            </p>
+          </div>
+          <!-- Navigation bar aligned to the right -->
+          <div class="flex space-x-4 pr-12">
+            <button id="prevBtn" class="w-24 bg-lime-300 rounded-none shadow-md py-2 hover:bg-lime-400 transition text-black flex justify-center items-center">
+              <i class="fas fa-arrow-left mr-2">
+              </i>
+            </button>
+            <button id="nextBtn" class="w-24 bg-white rounded-none shadow-md py-2 hover:bg-gray-100 transition text-black flex justify-center items-center">
+              <i class="fas fa-arrow-right ml-2">
+              </i>
+            </button>
+          </div>
+        </div>
+        <!-- Courses Slider -->
+        <div id="slider" class="overflow-hidden">
+          <div class="flex transition-transform duration-300 ease-in-out pb-4 w-max">
+            <!-- Course Card Template -->
+            <!-- Repeatable Card -->
+            <div class="flex-shrink-0 w-[300px] sm:w-[320px] md:w-[340px] mx-4 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition border border-gray-200">
+              <!-- Top Content: image, rating, title, description -->
+              <div class="p-4">
+                <img src="https://img.flexifunnels.com/images/3655/courses_c5njc_1550.png?q=80&w=1974&auto=format&fit=crop" alt="Course" class="w-full h-40 object-cover rounded-md">
+                <div class="p-4">
+                  <div class="flex items-center text-sm text-gray-700 mb-2">
+                    <span class="text-yellow-400 mr-1">★★★★★</span>
+                    <span>(4.5 Reviews)</span>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-800 mb-1">Performance Marketing
+                  </h3>
+                  <p class="text-gray-600 text-sm">Learn to drive growth with data-driven strategies and optimized marketing campaigns
+                  </p>
+                </div>
+              </div>
+              <!-- Bottom Content: button -->
+              <div class="bg-[#FF6838] text-white text-center py-2 font-medium text-sm cursor-pointer hover:bg-orange-600 transition">
+                Starts at ₹429 →
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="flex-shrink-0 w-[300px] sm:w-[320px] md:w-[340px] mx-4 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition border border-gray-200">
+              <div class="p-4">
+                <img src="https://img.flexifunnels.com/images/3655/courses_c5njc_1550.png?q=80&w=1974&auto=format&fit=crop" alt="Course" class="w-full h-40 object-cover rounded-md">
+                <div class="p-4">
+                  <div class="flex items-center text-sm text-gray-700 mb-2">
+                    <span class="text-yellow-400 mr-1">★★★★★</span>
+                    <span>(4.5 Reviews)</span>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-800 mb-1">Financial Literacy
+                  </h3>
+                  <p class="text-gray-600 text-sm">Learn to drive growth with data-driven strategies and optimized marketing campaigns
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[#73E569] text-black text-center py-2 font-medium text-sm cursor-pointer hover:bg-green-400 transition">
+                Starts at ₹429 →
+              </div>
+            </div>
+            <!-- Card 5 - Shopify Store Development -->
+            <div class="flex-shrink-0 w-[300px] sm:w-[320px] md:w-[340px] mx-4 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition border border-gray-200">
+              <div class="p-4">
+                <img src="https://img.flexifunnels.com/images/3655/courses_c5njc_1550.png?q=80&w=1974&auto=format&fit=crop" alt="Course" class="w-full h-40 object-cover rounded-md">
+                <div class="p-4">
+                  <div class="flex items-center text-sm text-gray-700 mb-2">
+                    <span class="text-yellow-400 mr-1">★★★★★</span>
+                    <span>(4.8 Reviews)</span>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-800 mb-1">Shopify Store Development
+                  </h3>
+                  <p class="text-gray-600 text-sm">Launch a powerful eCommerce <br>store from scratch using Shopify's ecosystem.
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[#00D1FF] text-black text-center py-2 font-medium text-sm cursor-pointer hover:bg-cyan-400 transition">
+                Starts at ₹599 →
+              </div>
+            </div>
+            <!-- Card 6 - WordPress Store Development -->
+            <div class="flex-shrink-0 w-[300px] sm:w-[320px] md:w-[340px] mx-4 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition border border-gray-200">
+              <div class="p-4">
+                <img src="https://img.flexifunnels.com/images/3655/courses_c5njc_1550.png?q=80&w=1974&auto=format&fit=crop" alt="Course" class="w-full h-40 object-cover rounded-md">
+                <div class="p-4">
+                  <div class="flex items-center text-sm text-gray-700 mb-2">
+                    <span class="text-yellow-400 mr-1">★★★★★</span>
+                    <span>(4.6 Reviews)</span>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-800 mb-1">WordPress Store Development
+                  </h3>
+                  <p class="text-gray-600 text-sm">Master WordPress and WooCommerce to create sleek, scalable online stores.
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[#EAC435] text-black text-center py-2 font-medium text-sm cursor-pointer hover:bg-yellow-300 transition">
+                Starts at ₹349 →
+              </div>
+            </div>
+            <!-- Card 7 - Founders Blueprint -->
+            <div class="flex-shrink-0 w-[300px] sm:w-[320px] md:w-[340px] mx-4 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition border border-gray-200">
+              <div class="p-4">
+                <img src="https://img.flexifunnels.com/images/3655/courses_c5njc_1550.png?q=80&w=1974&auto=format&fit=crop" alt="Course" class="w-full h-40 object-cover rounded-md">
+                <div class="p-4">
+                  <div class="flex items-center text-sm text-gray-700 mb-2">
+                    <span class="text-yellow-400 mr-1">★★★★★</span>
+                    <span>(4.9 Reviews)</span>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-800 mb-1">Founders Blueprint
+                  </h3>
+                  <p class="text-gray-600 text-sm">Navigate the startup world with proven frameworks and tactical insights.
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[#FF7F50] text-white text-center py-2 font-medium text-sm cursor-pointer hover:bg-orange-500 transition">
+                Starts at ₹799 →
+              </div>
+            </div>
+            <!-- Card 8 - 0 to Excel -->
+            <div class="flex-shrink-0 w-[300px] sm:w-[320px] md:w-[340px] mx-4 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition border border-gray-200">
+              <div class="p-4">
+                <img src="https://img.flexifunnels.com/images/3655/courses_c5njc_1550.png?q=80&w=1974&auto=format&fit=crop" alt="Course" class="w-full h-40 object-cover rounded-md">
+                <div class="p-4">
+                  <div class="flex items-center text-sm text-gray-700 mb-2">
+                    <span class="text-yellow-400 mr-1">★★★★★</span>
+                    <span>(4.7 Reviews)</span>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-800 mb-1">0 to Excel
+                  </h3>
+                  <p class="text-gray-600 text-sm">Beginner-friendly crash course to become an Excel pro from scratch.
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[#FFD700] text-black text-center py-2 font-medium text-sm">
+                Coming Soon →
+              </div>
+            </div>
+            <!-- Card 9 - AI in Excel -->
+            <div class="flex-shrink-0 w-[300px] sm:w-[320px] md:w-[340px] mx-4 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition border border-gray-200">
+              <div class="p-4">
+                <img src="https://img.flexifunnels.com/images/3655/courses_c5njc_1550.png?q=80&w=1974&auto=format&fit=crop" alt="Course" class="w-full h-40 object-cover rounded-md">
+                <div class="p-4">
+                  <div class="flex items-center text-sm text-gray-700 mb-2">
+                    <span class="text-yellow-400 mr-1">★★★★★</span>
+                    <span>(4.6 Reviews)</span>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-800 mb-1">AI in Excel
+                  </h3>
+                  <p class="text-gray-600 text-sm">Leverage AI features and plugins to supercharge productivity in Excel.
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[#B5EAEA] text-black text-center py-2 font-medium text-sm">
+                Coming Soon →
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="flex-shrink-0 w-[300px] sm:w-[320px] md:w-[340px] mx-4 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition border border-gray-200">
+              <div class="p-4">
+                <img src="https://img.flexifunnels.com/images/3655/courses_c5njc_1550.png?q=80&w=1974&auto=format&fit=crop" alt="Course" class="w-full h-40 object-cover rounded-md">
+                <div class="p-4">
+                  <div class="flex items-center text-sm text-gray-700 mb-2">
+                    <span class="text-yellow-400 mr-1">★★★★★</span>
+                    <span>(4.5 Reviews)</span>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-800 mb-1">Data Mastery With Power BI
+                  </h3>
+                  <p class="text-gray-600 text-sm">Learn to drive growth with data-driven strategies and optimized marketing campaigns
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[#FFD33C] text-black text-center py-2 font-medium text-sm">
+                Coming Soon →
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="flex-shrink-0 w-[300px] sm:w-[320px] md:w-[340px] mx-4 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition border border-gray-200">
+              <div class="p-4">
+                <img src="https://img.flexifunnels.com/images/3655/courses_c5njc_1550.png?q=80&w=1974&auto=format&fit=crop" alt="Course" class="w-full h-40 object-cover rounded-md">
+                <div class="p-4">
+                  <div class="flex items-center text-sm text-gray-700 mb-2">
+                    <span class="text-yellow-400 mr-1">★★★★★</span>
+                    <span>(4.5 Reviews)</span>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-800 mb-1">LinkedIn Growth Accelerator
+                  </h3>
+                  <p class="text-gray-600 text-sm">Build your personal brand and expand professional network on LinkedIn with us on this journey
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[#FFB5D9] text-black text-center py-2 font-medium text-sm">
+                Coming Soon →
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.getElementById('slider');
+            const sliderInner = slider.querySelector('div');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const courseCards = slider.querySelectorAll('.flex-shrink-0');
+            let currentIndex = 0;
+            let cardWidth = courseCards[0].offsetWidth + 32;
+            // Card width + margin
+            function updateSlider() {
+              sliderInner.style.transform = `translateX(-${currentIndex * cardWidth}
+      px)`;
+            }
+            nextBtn.addEventListener('click', function () {
+              if (currentIndex < courseCards.length - Math.floor(slider.offsetWidth / cardWidth)) {
+                currentIndex++;
+                updateSlider();
+              }
+            }
+                                    );
+            prevBtn.addEventListener('click', function () {
+              if (currentIndex > 0) {
+                currentIndex--;
+                updateSlider();
+              }
+            }
+                                    );
+            window.addEventListener('resize', function () {
+              cardWidth = courseCards[0].offsetWidth + 32;
+              updateSlider();
+            }
+                                   );
+          }
+                                   );
+        </script>
+      </section>
+
+</body>
+</html>

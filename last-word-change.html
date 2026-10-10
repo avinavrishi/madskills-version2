@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rotating Word Animation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    #dynamic-heading {
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    .highlight {
+      color: #ff5733;
+      display: inline-block;
+      position: relative;
+    }
+
+    .animate-up {
+      animation: moveUp 0.5s ease-in-out;
+    }
+
+    @keyframes moveUp {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      50% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      51% {
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="dynamic-heading">
+    Learn what <span class="highlight" id="changing-word">matters</span>.
+  </div>
+
+  <script>
+    const words = ["matters", "counts", "inspires", "motivates", "drives"];
+    let index = 0;
+    const wordElement = document.getElementById("changing-word");
+
+    setInterval(() => {
+      // Add animation class
+      wordElement.classList.add("animate-up");
+
+      // Use setTimeout to change word midway through animation
+      setTimeout(() => {
+        index = (index + 1) % words.length;
+        wordElement.textContent = words[index];
+      }, 250); // half of animation duration
+
+      // Remove animation class after it's done
+      setTimeout(() => {
+        wordElement.classList.remove("animate-up");
+      }, 500); // same as animation duration
+    }, 2500); // change word every 2.5s
+  </script>
+
+</body>
+</html>
